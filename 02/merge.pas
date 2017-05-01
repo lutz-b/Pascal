@@ -32,6 +32,11 @@ begin
     readln (Feld2[j]);
 
   { Verschmelzungsprozess beginnen }
+  
+  { benutze Indizes von den Teilfeldern,
+  * vergleiche Feldelemente an den Indizes,
+  * fuege das kleinere an und inkrementiere den zugehoerigen Index
+  }
   i := 1;
   j := 1;
   for k := 1 to ERGEBNISFELDLAENGE do
@@ -51,8 +56,9 @@ begin
 		end
 	end
 	else { i <= FELDLAENGE1 and j <= FELDLAENGE2 }
-	{ Fuege die restlichen Elemente aus dem array an,
-	*  dessen index nicht den gueltigen Bereich ueberschritten hat }
+	{ Fuege die restlichen Elemente aus dem Array an,
+	*  dessen Index nicht den gueltigen Bereich ueberschritten hat
+	}
 	begin
 		if i <= FELDLAENGE1 then
 		begin
@@ -65,7 +71,7 @@ begin
 			j := j + 1
 		end
 	end { i <= FELDLAENGE1 and j <= FELDLAENGE2 }
-  end; { for-Schleife}
+  end; { for-Schleife }
   
   { Ausgabe }
   
